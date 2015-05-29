@@ -1,7 +1,3 @@
-If you want to get cracking on the JavaScript source then do this:
-
-    git clone git@github.com:guyroyse/gilded-rose-javascript.git
-
 Hi and welcome to team Gilded Rose.
 
 As you know, we are a small inn with a prime location in a prominent city ran
@@ -55,7 +51,3 @@ ownership.
 Just for clarification, an item can never have its *quality* increase above 50,
 however "Sulfuras" is a legendary item and as such its *quality* is 80 and it
 never alters.
-
-Sources:
-  <http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/>
-  <https://github.com/professor/GildedRose>
