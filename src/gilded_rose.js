@@ -14,49 +14,62 @@ items.push(new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20));
 items.push(new Item('Conjured Mana Cake', 3, 6));
 
 function update_quality() {
+
   for (var i = 0; i < items.length; i++) {
-    if (items[i].name != 'Aged Brie' && items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
-      if (items[i].quality > 0) {
-        if (items[i].name != 'Sulfuras, Hand of Ragnaros') {
-          items[i].quality = items[i].quality - 1
-        }
+    // our implementation
+
+    switch(items[i].name){
+    case 'test item' :
+        normal(items[i])
+            break;
+
+            case 'Aged Brie' :
+              agedBrie(items[i])
+            break;
+            case 'Backstage passes to a TAFKAL80ETC concert' :
+            backStage(items[i])
+            break;
+             default :
+}
+}
+}
+
+function normal(item) {
+  item.sell_in = item.sell_in - 1
+  item.quality = item.quality - 1
+    if(item.sell_in < 0){
+      item.quality = item.quality - 1
       }
-    } else {
-      if (items[i].quality < 50) {
-        items[i].quality = items[i].quality + 1
-        if (items[i].name == 'Backstage passes to a TAFKAL80ETC concert') {
-          if (items[i].sell_in < 11) {
-            if (items[i].quality < 50) {
-              items[i].quality = items[i].quality + 1
-            }
-          }
-          if (items[i].sell_in < 6) {
-            if (items[i].quality < 50) {
-              items[i].quality = items[i].quality + 1
-            }
-          }
-        }
+    if(item.quality < 0){
+      item.quality = item.quality = 0
       }
-    }
-    if (items[i].name != 'Sulfuras, Hand of Ragnaros') {
-      items[i].sell_in = items[i].sell_in - 1;
-    }
-    if (items[i].sell_in < 0) {
-      if (items[i].name != 'Aged Brie') {
-        if (items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
-          if (items[i].quality > 0) {
-            if (items[i].name != 'Sulfuras, Hand of Ragnaros') {
-              items[i].quality = items[i].quality - 1
-            }
-          }
-        } else {
-          items[i].quality = items[i].quality - items[i].quality
-        }
-      } else {
-        if (items[i].quality < 50) {
-          items[i].quality = items[i].quality + 1
-        }
-      }
-    }
+}
+
+function agedBrie(item){
+  item.sell_in = item.sell_in - 1
+  item.quality = item.quality + 1
+  if(item.quality >= 50){
+    item.quality = 50
   }
+  if(item.sell_in <0 ){
+    item.quality = item.quality + 1
+  }
+}
+function backStage(item){
+  item.sell_in = item.sell_in -1
+
+if(item.sell_in <=0){
+  item.quality = 0
+}
+else if(item.sell_in < 5){
+    item.quality = item.quality + 3
+  }
+  else if (item.sell_in < 10){
+    item.quality = item.quality + 2
+  }
+  else {
+    item.quality = item.quality + 1
+  }
+
+
 }
