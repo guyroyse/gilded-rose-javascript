@@ -1,0 +1,25 @@
+{
+  "name": "gilded-rose-refactoring",
+  "version": "1.0.0",
+  "description": "If you want to get cracking on the JavaScript source then do this:",
+  "main": "src/gilded_rose.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saadatt/gilded-rose-javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saadatt/gilded-rose-javascript/issues"
+  },
+  "homepage": "https://github.com/saadatt/gilded-rose-javascript#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.4"
+  }
+}
