@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { Item, items } = require('../src/gilded_rose');
+const { Item, items, update_quality } = require('../src/gilded_rose');
 
 // function Item(name, sell_in, quality) {
 //   this.name = name;
@@ -31,4 +31,10 @@ describe('Gilded Rose', () => {
     expect(items instanceof Array).to.be.true;
     expect(items.length).to.be.greaterThan(0);
   });
+  
+  //We have a system in place that updates our inventory for us...
+  it('should verify the presence of an update_quality function', () => {
+    expect(update_quality).to.be.a('function');
+  });
+
 });
