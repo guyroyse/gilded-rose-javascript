@@ -39,4 +39,11 @@ describe('Gilded Rose', () => {
     const testItem = new Item('itemName', 2, 3);
     expect(testItem.quality === 3).not.to.be.false;
   });
+
+  // At the end of each day our system lowers both values for every item
+  it('should verify sell_in value goes down each day', () => {
+    update_quality(items);
+    expect(items[0].sell_in).to.be.lessThan();
+    expect(items[0].quality).to.be.lessThan();
+  });
 });
