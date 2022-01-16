@@ -48,4 +48,11 @@ describe('Gilded Rose', () => {
     expect(items[0].sell_in).to.be.lessThan(previous_sell_in);
     expect(items[0].quality).to.be.lessThan(previous_quality);
   });
+
+  // Once the sell_in days is less then zero, quality degrades twice as fast
+  it('should verify quality degrades twice as fast once sell_in value is below 0', () => {
+    items.push(new Item('testItem', 0, 5));
+    update_quality();
+    expect(items[items.length - 1].quality).to.equal();
+  });
 });
