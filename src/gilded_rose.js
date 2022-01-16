@@ -50,7 +50,7 @@ function update_quality() {
             }
           }
         } else {
-          items[i].quality = items[i].quality - items[i].quality
+          items[i].quality = 0
         }
       } else {
         if (items[i].quality < 50) {
