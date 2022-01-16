@@ -60,4 +60,4 @@ function update_quality() {
     }
   }
 }
-module.exports = {Item};
+module.exports = {Item, items};
