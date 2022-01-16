@@ -27,4 +27,16 @@ describe('Gilded Rose', () => {
   it('should verify the presence of an update_quality function', () => {
     expect(update_quality).to.be.a('function');
   });
+
+  // items have a sell_in value ...
+  it('should verify that an item has a sell_in parameter', () => {
+    const testItem = new Item('itemName', 2, 3);
+    expect(testItem.sell_in === null).to.be.true;
+  });
+
+  //items have a quality value ...
+  it('should verify that an item has a quality parameter', () => {
+    const testItem = new Item('itemName', 2, 3);
+    expect(testItem.quality === null).not.to.be.false;
+  });
 });
