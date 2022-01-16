@@ -60,3 +60,4 @@ function update_quality() {
     }
   }
 }
+module.exports = {Item};
