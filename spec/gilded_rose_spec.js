@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { Item } = require('../src/gilded_rose');
+const { Item, items } = require('../src/gilded_rose');
 
 // function Item(name, sell_in, quality) {
 //   this.name = name;
@@ -22,12 +22,12 @@ describe('Gilded Rose', () => {
   //   expect(true).to.be.true;
   // });
 
-  // it('should set an array of items', () => {
-  //   expect(items instanceof Array).to.be.true;
-  // });
-
   //do not alter the Item class or items property as those belong to the goblin in the corner
   it('should verify Item constructor is present', () => {
     expect(Item).to.be.a('function');
+  });
+
+  it('should set an array of items', () => {
+    expect(items instanceof Array).to.be.true;
   });
 });
