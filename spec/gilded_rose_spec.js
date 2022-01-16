@@ -9,6 +9,10 @@ describe("Gilded Rose", function() {
   it('should verify mocha works fine', () => {
     let a = 1, b = 2;
     expect(a).to.be.lessThan(b)
-  })
+  });
+
+  it('should verify mocha test setup is a success', () => {
+    expect(true).to.be.true;
+  });
 
 });
