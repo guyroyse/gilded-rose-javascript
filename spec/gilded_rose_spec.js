@@ -29,5 +29,6 @@ describe('Gilded Rose', () => {
 
   it('should set an array of items', () => {
     expect(items instanceof Array).to.be.true;
+    expect(items.length).to.be.greaterThan(0);
   });
 });
