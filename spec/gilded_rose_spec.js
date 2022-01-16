@@ -42,8 +42,10 @@ describe('Gilded Rose', () => {
 
   // At the end of each day our system lowers both values for every item
   it('should verify sell_in value goes down each day', () => {
+    const previous_sell_in = items[0].sell_in;
+    const previous_quality = items[0].quality;
     update_quality(items);
-    expect(items[0].sell_in).to.be.lessThan();
-    expect(items[0].quality).to.be.lessThan();
+    expect(items[0].sell_in).to.be.lessThan(previous_sell_in);
+    expect(items[0].quality).to.be.lessThan(previous_quality);
   });
 });
