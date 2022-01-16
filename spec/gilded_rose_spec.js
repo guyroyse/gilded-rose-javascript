@@ -31,12 +31,12 @@ describe('Gilded Rose', () => {
   // items have a sell_in value ...
   it('should verify that an item has a sell_in parameter', () => {
     const testItem = new Item('itemName', 2, 3);
-    expect(testItem.sell_in === null).to.be.true;
+    expect(testItem.sell_in === 2).to.be.true;
   });
 
   //items have a quality value ...
   it('should verify that an item has a quality parameter', () => {
     const testItem = new Item('itemName', 2, 3);
-    expect(testItem.quality === null).not.to.be.false;
+    expect(testItem.quality === 3).not.to.be.false;
   });
 });
