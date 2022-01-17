@@ -12,9 +12,9 @@ describe("Gilded Rose", function() {
 
     const [matching_sell_in, matching_quality] = getItemData(NAMES.AGED)
 
-    expect(name).to.be(NAMES.AGED);
-    expect(sell_in).to.be(matching_sell_in);
-    expect(quality).to.be(matching_quality);
+    expect(name).to.equal(NAMES.AGED);
+    expect(sell_in).to.equal(matching_sell_in);
+    expect(quality).to.equal(matching_quality);
   })
 
 });

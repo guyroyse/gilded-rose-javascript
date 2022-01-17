@@ -1,10 +1,12 @@
-function Item(name, sell_in, quality) {
-  this.name = name;
-  this.sell_in = sell_in;
-  this.quality = quality;
+class Item {
+  constructor(name, sell_in, quality) {
+    this.name = name;
+    this.sell_in = sell_in;
+    this.quality = quality;
+  }
 }
 
-var items = []
+const items = []
 
 items.push(new Item('+5 Dexterity Vest', 10, 20));
 items.push(new Item('Aged Brie', 2, 0));
@@ -60,3 +62,5 @@ function update_quality() {
     }
   }
 }
+
+module.exports = { Item };
