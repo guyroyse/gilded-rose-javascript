@@ -1,9 +1,8 @@
 const { expect } = require('chai');
-const { NAMES } = require('../src/constants');
+const { NAMES, ITEMS_DATA } = require('../src/constants');
 const {getItemData} = require('../src/helpers');
 const { Item, update_quality } = require('../src/gilded_rose');
-
-
+const { new_update_quality } = require('../src/gilded_rose_refactored');
 
 describe("Gilded Rose", function() {
 
@@ -11,7 +10,12 @@ describe("Gilded Rose", function() {
 
   beforeEach(() => {
     items = [
-      new Item(NAMES.SULFURAS, ...getItemData(NAMES.SULFURAS))
+      new Item(NAMES.SULFURAS, ...getItemData(NAMES.SULFURAS)),
+      new Item(NAMES.DEX, ...getItemData(NAMES.DEX)),
+      new Item(NAMES.AGED, ...getItemData(NAMES.AGED)),
+      new Item(NAMES.ELIXIR, ...getItemData(NAMES.ELIXIR)),
+      new Item(NAMES.BACKSTAGE, ...getItemData(NAMES.BACKSTAGE)),
+      new Item(NAMES.CONJURED, ...getItemData(NAMES.CONJURED)),
     ];
   });
 
@@ -41,7 +45,7 @@ describe("Gilded Rose", function() {
   it ('should verify a new_update_quality f-n returns an array of items ',() =>{
     const new_updated_quality_result = new_update_quality(items);
     expect(new_updated_quality_result instanceof Array).to.be.true;
-    expect(new_updated_quality_result.length).to.equal(Object.values(NAMES).length);
+    expect(new_updated_quality_result.length).to.equal(Object.values(ITEMS_DATA).length);
   })
 });
 
