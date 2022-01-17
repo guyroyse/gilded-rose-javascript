@@ -37,4 +37,11 @@ describe("Gilded Rose", function() {
     expect(sell_in).to.equal(matching_sell_in);
     expect(quality).to.equal(matching_quality);
   });
+
+  it ('should verify a new_update_quality f-n returns an array of items ',() =>{
+    const new_updated_quality_result = new_update_quality(items);
+    expect(new_updated_quality_result instanceof Array).to.be.true;
+    expect(new_updated_quality_result.length).to.equal(Object.values(NAMES).length);
+  })
 });
+
