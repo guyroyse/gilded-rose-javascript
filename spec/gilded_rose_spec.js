@@ -81,8 +81,8 @@ for (let i = 0; i < 5; i++) {
   previous_quality_aged = items[1].quality;
   previous_quality_backstage = items[4].quality;
   update_quality(items);
-  expect(items[1].quality).to.be.greaterThan(previous_quality_aged);
-  expect(items[4].quality).to.be.greaterThan(previous_quality_backstage);
+  expect(items[1].quality).to.be.greaterThan();
+  expect(items[4].quality).to.be.greaterThan();
 }
   });
 
