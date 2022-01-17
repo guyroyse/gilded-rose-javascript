@@ -13,31 +13,37 @@ items.push(new Item('Sulfuras, Hand of Ragnaros', 0, 80));
 items.push(new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20));
 items.push(new Item('Conjured Mana Cake', 3, 6));
 
+const names = {
+  aged: "Aged Brie",
+  sulfuras: "Sulfuras, Hand of Ragnaros",
+  backstage: "Backstage passes to a TAFKAL80ETC concert",
+};
+
 function update_quality() {
   items.map(update_item);
 }
 
 const update_item = (item) => {
-  if(item.name === 'Sulfuras, Hand of Ragnaros'){
+  if(item.name === names.sulfuras){
     return;
   }
 
-    if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
+    if (item.name != names.aged && item.name != names.backstage) {
       if (item.quality > 0) {
           item.quality--;
         }
     } else {
       if (item.quality < 50) {
         item.quality = item.quality + 1
-        if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
+        if (item.name == names.backstage) {
           if (item.sell_in < 11) {
             if (item.quality < 50) {
-              item.quality = item.quality + 1
+              item.quality++;
             }
           }
           if (item.sell_in < 6) {
             if (item.quality < 50) {
-              item.quality = item.quality + 1
+              item.quality++;
             }
           }
         }
@@ -45,8 +51,8 @@ const update_item = (item) => {
     }
       item.sell_in--;
     if (item.sell_in < 0) {
-      if (item.name != 'Aged Brie') {
-        if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
+      if (item.name != names.aged) {
+        if (item.name != names.backstage) {
           if (item.quality > 0) {
               item.quality--;
             }
@@ -55,7 +61,7 @@ const update_item = (item) => {
         }
       } else {
         if (item.quality < 50) {
-          item.quality = item.quality + 1
+          item.quality++;
         }
       }
     }
