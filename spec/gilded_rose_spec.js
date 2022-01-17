@@ -91,7 +91,7 @@ for (let i = 0; i < 5; i++) {
     for (let i = 0; i < 55; i++) {
       update_quality(items);
     }
-      expect(items[1].quality).to.equal(50);
+      expect(items[1].quality).to.equal();
   });
 
 });
