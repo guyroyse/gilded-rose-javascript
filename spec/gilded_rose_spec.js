@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const { NAMES } = require('../src/constants');
 const {getItemData} = require('../src/helpers');
-const { Item } = require('../src/gilded_rose');
+const { Item, update_quality } = require('../src/gilded_rose');
 
 
 
