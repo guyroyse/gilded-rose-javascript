@@ -72,6 +72,21 @@ describe('Gilded Rose', () => {
     }
   });
 
+  // both "Backstage passes" and "Aged brie" increase in quality as their sell_in value decreases
+  it('should verify quality of “Aged Brie” and "Backstage" goes up as they get older', () => {
+    expect(items[1].name).contains('Aged');
+    expect(items[4].name).contains('Backstage');
+    let previous_quality = 0;
+for (let i = 0; i < 5; i++) {
+  previous_quality_aged = items[1].quality;
+  previous_quality_backstage = items[4].quality;
+  update_quality(items);
+  expect(items[1].quality).to.be.greaterThan(previous_quality_aged);
+  expect(items[4].quality).to.be.greaterThan(previous_quality_backstage);
+}
+  });
+
+
 });
 
 
