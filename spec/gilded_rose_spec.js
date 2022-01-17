@@ -59,7 +59,7 @@ describe('Gilded Rose', () => {
   it ('should verify an update_quality f-n returns an array of items ',() =>{
     update_quality(items);
     expect(items instanceof Array).to.be.true;
-    expect(items.length).to.be.greaterThan();
+    expect(items.length).to.be.greaterThan(0);
   })
 });
 
