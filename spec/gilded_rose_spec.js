@@ -61,6 +61,17 @@ describe('Gilded Rose', () => {
     expect(items instanceof Array).to.be.true;
     expect(items.length).to.be.greaterThan(0);
   })
+
+  // 'Sulfuras', being a legendary item, never has to be sold or decreases in Quality
+  it('should not update quality for Sulfuras', () => {
+    expect(items[3].name).contains('Sulfuras');
+    for (let i = 0; i < 50; i++) {
+      previous_quality = items[3].quality;
+      update_quality(items);
+      expect(items[3].quality).to.equal(previous_quality);
+    }
+  });
+
 });
 
 
