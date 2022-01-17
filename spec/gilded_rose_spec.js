@@ -86,6 +86,13 @@ for (let i = 0; i < 5; i++) {
 }
   });
 
+  // The Quality of an item is never more than 50
+  it('should verify quality of items cannot exceed 50', () => {
+    for (let i = 0; i < 55; i++) {
+      update_quality(items);
+    }
+      expect(items[1].quality).to.equal(50);
+  });
 
 });
 
