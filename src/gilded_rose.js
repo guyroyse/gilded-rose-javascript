@@ -19,6 +19,10 @@ const names = {
   backstage: "Backstage passes to a TAFKAL80ETC concert",
 };
 
+const quality = {
+  max: 50
+}
+
 function update_quality() {
   items.map(update_item);
 }
@@ -33,16 +37,16 @@ const update_item = (item) => {
           item.quality--;
         }
     } else {
-      if (item.quality < 50) {
+      if (item.quality < quality.max) {
         item.quality = item.quality + 1
         if (item.name == names.backstage) {
           if (item.sell_in < 11) {
-            if (item.quality < 50) {
+            if (item.quality < quality.max) {
               item.quality++;
             }
           }
           if (item.sell_in < 6) {
-            if (item.quality < 50) {
+            if (item.quality < quality.max) {
               item.quality++;
             }
           }
@@ -60,7 +64,7 @@ const update_item = (item) => {
           item.quality = 0;
         }
       } else {
-        if (item.quality < 50) {
+        if (item.quality < quality.max) {
           item.quality++;
         }
       }
