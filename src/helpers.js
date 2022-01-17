@@ -6,4 +6,6 @@ const getItemData = (key) => {
     return [sell_in, quality];
 };
 
-module.exports = { getItemData }
+const decreaseValue = (value, decreasingValue = 1) => value - decreasingValue;
+
+module.exports = { getItemData, decreaseValue }
