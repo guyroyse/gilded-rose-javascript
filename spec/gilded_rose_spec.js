@@ -52,7 +52,16 @@ describe('Gilded Rose', () => {
   // Once the sell_in days is less then zero, quality degrades twice as fast
   it('should verify quality degrades twice as fast once sell_in value is below 0', () => {
     items.push(new Item('testItem', 0, 5));
-    update_quality();
+    update_quality(items);
     expect(items[items.length - 1].quality).to.equal(3);
   });
+
+  it ('should verify an update_quality f-n returns an array of items ',() =>{
+    update_quality(items);
+    expect(items instanceof Array).to.be.true;
+    expect(items.length).to.be.greaterThan(0);
+  })
 });
+
+
+
