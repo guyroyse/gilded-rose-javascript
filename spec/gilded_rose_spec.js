@@ -44,8 +44,16 @@ describe("Gilded Rose", function() {
 
   it ('should verify a new_update_quality f-n returns an array of items ',() =>{
     const new_updated_quality_result = new_update_quality(items);
+
     expect(new_updated_quality_result instanceof Array).to.be.true;
     expect(new_updated_quality_result.length).to.equal(Object.values(ITEMS_DATA).length);
   })
+
+  // At the end of each day our system lowers both values
+  it('should verify the sell_in value goes down every day', () => {
+    const [ , {sell_in}] = new_update_quality(items);
+
+    expect(sell_in).to.equal(items[1].sell_in - 1);
+  });
 });
 
