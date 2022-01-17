@@ -55,5 +55,11 @@ describe("Gilded Rose", function() {
 
     expect(sell_in).to.equal(items[1].sell_in - 1);
   });
+
+  it('should verify the sell_in value for "Sulfarus" does not go down', () => {
+    const [{sell_in}] = new_update_quality(items);
+
+    expect(sell_in).to.equal(items[0].sell_in);
+  });
 });
 
