@@ -18,13 +18,14 @@ function update_quality() {
 }
 
 const update_item = (item) => {
+  if(item.name === 'Sulfuras, Hand of Ragnaros'){
+    return;
+  }
 
     if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
       if (item.quality > 0) {
-        if (item.name != 'Sulfuras, Hand of Ragnaros') {
           item.quality--;
         }
-      }
     } else {
       if (item.quality < 50) {
         item.quality = item.quality + 1
@@ -42,17 +43,13 @@ const update_item = (item) => {
         }
       }
     }
-    if (item.name != 'Sulfuras, Hand of Ragnaros') {
       item.sell_in--;
-    }
     if (item.sell_in < 0) {
       if (item.name != 'Aged Brie') {
         if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
           if (item.quality > 0) {
-            if (item.name != 'Sulfuras, Hand of Ragnaros') {
               item.quality--;
             }
-          }
         } else {
           item.quality = 0;
         }

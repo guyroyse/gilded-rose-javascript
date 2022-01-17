@@ -68,7 +68,7 @@ describe('Gilded Rose', () => {
     for (let i = 0; i < 50; i++) {
       previous_quality = items[3].quality;
       update_quality(items);
-      expect(items[3].quality).to.equal();
+      expect(items[3].quality).to.equal(previous_quality);
     }
   });
 
