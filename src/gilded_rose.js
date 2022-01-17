@@ -66,4 +66,4 @@ function update_quality() {
   }
 }
 
-module.exports = { Item, update_quality };
+module.exports = { Item, items, update_quality };
