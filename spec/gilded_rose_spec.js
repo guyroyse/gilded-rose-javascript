@@ -117,5 +117,12 @@ describe("Gilded Rose over new_update_function", function() {
 
     expect(quality).to.equal(items[4].quality + 3);
   });
+
+  it('should verify quality of the Backstage passes drops to 0 after the concert', () => {
+    items[4].sell_in = - 1;
+    const [,,,, {quality}]  = new_update_quality(items);
+
+    expect(quality).to.equal(0);
+  });
 });
 
