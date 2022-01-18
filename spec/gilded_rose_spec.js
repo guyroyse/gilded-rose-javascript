@@ -110,5 +110,12 @@ describe("Gilded Rose over new_update_function", function() {
 
     expect(quality).to.equal(items[4].quality + 2);
   });
+
+  it('should verify quality of the Backstage goes up by 3 as its sell_in gets below 6, and it never gets above 50 in its quality', () => {
+    items[4].sell_in = 5;
+    const [,,,, {quality}]  = new_update_quality(items);
+
+    expect(quality).to.equal(items[4].quality + 3);
+  });
 });
 
