@@ -72,6 +72,13 @@ const matchingHandlers = {
             quality,
             quality < 50
         );
+
+        quality = updateValueByCondition(
+            increaseValue(quality),
+            quality,
+            sell_in < 11 && quality < 50
+        );
+
         return {
             quality,
             sell_in,
