@@ -124,5 +124,12 @@ describe("Gilded Rose over new_update_function", function() {
 
     expect(quality).to.equal(0);
   });
+
+  //At the end of each day our system lowers both values for every item
+  it('should verify the quality of regular items goes down at the end of each day', () => {
+    console.log(items)
+    const [, {quality}] = new_update_quality(items);
+    expect(quality).to.equal(items[1].quality - 1);
+  });
 });
 
