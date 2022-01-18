@@ -84,11 +84,11 @@ describe("Gilded Rose over new_update_function", function() {
     expect(quality).to.equal(items[1].quality - 1);
   });
 
-  it('should verify quality of the regular item decreases day by day', () => {
-    const new_update_quality_result = new_update_quality(items);
-    new_update_quality_result[1].sell_in = - 1;
+  it('should verify quality of the regular item decreases faster as its sell_in gets below zero', () => {
+    items[1].sell_in = - 1;
+    const [, {quality}]  = new_update_quality(items);
 
-    expect(new_update_quality_result[1].quality).to.equal(items[1].quality - 2);
+    expect(quality).to.equal(items[1].quality - 2);
   });
 });
 
