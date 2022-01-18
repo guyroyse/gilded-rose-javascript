@@ -144,5 +144,11 @@ describe("Gilded Rose over new_update_function", function() {
     expect(quality).to.equal(items[5].quality - 2);
   });
 
+  it('should verify that quality of any item except Sulfuras never gets more than 50', () => {
+    items[2].quality = 50;
+    const [,, {quality}] = new_update_quality(items);
+    expect( quality).to.equal(50);
+  });
+
 });
 
