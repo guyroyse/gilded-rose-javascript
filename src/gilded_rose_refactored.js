@@ -56,6 +56,7 @@ const matchingHandlers = {
             quality,
             sell_in < 0 && quality > 0
         );
+
         return {
             quality,
             sell_in,
@@ -83,6 +84,12 @@ const matchingHandlers = {
             increaseValue(quality),
             quality,
             sell_in < 6 && quality < 50
+        );
+
+        quality = updateValueByCondition(
+            decreaseValue(quality, quality),
+            quality,
+            sell_in < 0
         );
 
         return {
