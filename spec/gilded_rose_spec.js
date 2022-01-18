@@ -138,5 +138,11 @@ describe("Gilded Rose over new_update_function", function() {
     expect(quality).to.equal(80);
   });
 
+  it('should verify quality of "Conjured" item decreases in quality twice as fast as normal items', () => {
+    console.log(items);
+    const [,,,,, {quality}]  = new_update_quality(items);
+    expect(quality).to.equal(items[5].quality - 2);
+  });
+
 });
 
