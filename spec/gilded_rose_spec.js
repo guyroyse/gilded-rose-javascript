@@ -90,5 +90,11 @@ describe("Gilded Rose over new_update_function", function() {
 
     expect(quality).to.equal(items[1].quality - 2);
   });
+
+  it('should verify the "Aged Brie" and Backstage increases in its quality the older it gets', () => {
+    const [, ,{quality}]  = new_update_quality(items);
+
+    expect(quality).to.equal(items[2].quality + 1);
+  });
 });
 
