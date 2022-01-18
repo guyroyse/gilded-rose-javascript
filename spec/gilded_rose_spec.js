@@ -96,5 +96,12 @@ describe("Gilded Rose over new_update_function", function() {
 
     expect(quality).to.equal(items[2].quality + 1);
   });
+
+  it('should verify quality of the Aged Brie will increase by 1 more as sell_in gets below zero', () => {
+    items[2].sell_in = - 1;
+    const [,, {quality}]  = new_update_quality(items);
+
+    expect(quality).to.equal(items[2].quality + 2);
+  });
 });
 
