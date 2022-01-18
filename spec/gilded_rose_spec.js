@@ -41,8 +41,24 @@ describe("Gilded Rose", function() {
     expect(sell_in).to.equal(matching_sell_in);
     expect(quality).to.equal(matching_quality);
   });
+});
 
-  it ('should verify a new_update_quality f-n returns an array of items ',() =>{
+describe("Gilded Rose over new_update_function", function() {
+
+  let items;
+
+  beforeEach(() => {
+    items = [
+      new Item(NAMES.SULFURAS, ...getItemData(NAMES.SULFURAS)),
+      new Item(NAMES.DEX, ...getItemData(NAMES.DEX)),
+      new Item(NAMES.AGED, ...getItemData(NAMES.AGED)),
+      new Item(NAMES.ELIXIR, ...getItemData(NAMES.ELIXIR)),
+      new Item(NAMES.BACKSTAGE, ...getItemData(NAMES.BACKSTAGE)),
+      new Item(NAMES.CONJURED, ...getItemData(NAMES.CONJURED)),
+    ];
+  });
+
+  it('should verify a new_update_quality f-n returns an array of items ', () => {
     const new_updated_quality_result = new_update_quality(items);
 
     expect(new_updated_quality_result instanceof Array).to.be.true;
@@ -51,7 +67,7 @@ describe("Gilded Rose", function() {
 
   // At the end of each day our system lowers both values
   it('should verify the sell_in value goes down every day', () => {
-    const [ , {sell_in}] = new_update_quality(items);
+    const [, {sell_in}] = new_update_quality(items);
 
     expect(sell_in).to.equal(items[1].sell_in - 1);
   });
