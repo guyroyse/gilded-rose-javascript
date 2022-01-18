@@ -101,7 +101,7 @@ const matchingHandlers = {
     [NAMES.CONJURED]: ({ quality, sell_in, name }) => {
         sell_in = decreaseValue(sell_in);
         quality = updateValueByCondition(
-            decreaseValue(quality),
+            decreaseValue(quality, 2),
             quality,
             quality > 0
         );
