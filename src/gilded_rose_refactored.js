@@ -1,6 +1,6 @@
 const { NAMES } = require('./constants');
 const { items } = require('./gilded_rose');
-const { decreaseValue, updateValueByCondition } = require('./helpers');
+const { decreaseValue, updateValueByCondition, increaseValue } = require('./helpers');
 
 const matchingHandlers = {
     [NAMES.DEX]: ({ quality, sell_in, name }) => {
@@ -25,6 +25,11 @@ const matchingHandlers = {
     },
     [NAMES.AGED]: ({ quality, sell_in, name }) => {
         sell_in = decreaseValue(sell_in);
+        quality = updateValueByCondition(
+            increaseValue(quality),
+            quality,
+            quality < 50
+        );
         return {
             quality,
             sell_in,
@@ -54,6 +59,11 @@ const matchingHandlers = {
     }),
     [NAMES.BACKSTAGE]: ({ quality, sell_in, name }) => {
         sell_in = decreaseValue(sell_in);
+        quality = updateValueByCondition(
+            increaseValue(quality),
+            quality,
+            quality < 50
+        );
         return {
             quality,
             sell_in,

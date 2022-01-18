@@ -8,7 +8,9 @@ const getItemData = (key) => {
 
 const decreaseValue = (value, decreasingValue = 1) => value - decreasingValue;
 
+const increaseValue = (value, increasingValue = 1) => value + increasingValue;
+
 const updateValueByCondition = (updatedValue, value, cond) =>
     cond ? updatedValue : value;
 
-module.exports = { getItemData, decreaseValue, updateValueByCondition }
+module.exports = { getItemData, decreaseValue, updateValueByCondition, increaseValue }
