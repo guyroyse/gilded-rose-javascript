@@ -1,11 +1,15 @@
 const { NAMES } = require('./constants');
 const { items } = require('./gilded_rose');
-const { decreaseValue } = require('./helpers');
+const { decreaseValue, updateValueByCondition } = require('./helpers');
 
 const matchingHandlers = {
     [NAMES.DEX]: ({ quality, sell_in, name }) => {
         sell_in = decreaseValue(sell_in);
-
+        quality = updateValueByCondition(
+            decreaseValue(quality),
+            quality,
+            quality > 0
+        );
         return {
             quality,
             sell_in,
@@ -22,6 +26,11 @@ const matchingHandlers = {
     },
     [NAMES.ELIXIR]: ({ quality, sell_in, name }) => {
         sell_in = decreaseValue(sell_in);
+        quality = updateValueByCondition(
+            decreaseValue(quality),
+            quality,
+            quality > 0
+        );
         return {
             quality,
             sell_in,
@@ -41,6 +50,11 @@ const matchingHandlers = {
     },
     [NAMES.CONJURED]: ({ quality, sell_in, name }) => {
         sell_in = decreaseValue(sell_in);
+        quality = updateValueByCondition(
+            decreaseValue(quality),
+            quality,
+            quality > 0
+        );
         return {
             quality,
             sell_in,
