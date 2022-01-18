@@ -25,11 +25,19 @@ const matchingHandlers = {
     },
     [NAMES.AGED]: ({ quality, sell_in, name }) => {
         sell_in = decreaseValue(sell_in);
+
         quality = updateValueByCondition(
             increaseValue(quality),
             quality,
             quality < 50
         );
+
+        quality = updateValueByCondition(
+            increaseValue(quality),
+            quality,
+            sell_in < 0 && quality < 50
+        );
+
         return {
             quality,
             sell_in,
