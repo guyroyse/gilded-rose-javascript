@@ -131,5 +131,12 @@ describe("Gilded Rose over new_update_function", function() {
     const [, {quality}] = new_update_quality(items);
     expect(quality).to.equal(items[1].quality - 1);
   });
+
+  it('should verify the quality of "Sulfuras" product always stays at 80', () => {
+    console.log(items)
+    const [{quality}] = new_update_quality(items);
+    expect(quality).to.equal(80);
+  });
+
 });
 
